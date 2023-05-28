@@ -1,0 +1,2 @@
+obj\Debug/TelecomService.cs \
+obj\Debug/TelecomServiceGrpc.cs: TelecomService.proto

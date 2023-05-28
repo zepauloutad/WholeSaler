@@ -1,0 +1,49 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Server_Side";
+
+package TelecomService;
+
+service Telecom {
+  rpc Reserve(ReserveRequest) returns (ReserveReply) {}
+  rpc Activate(ActivateRequest) returns (ActivateReply) {}
+  rpc Deactivate(DeactivateRequest) returns (DeactivateReply) {}
+  rpc Terminate(TerminateRequest) returns (TerminateReply) {}
+}
+
+message ReserveRequest {
+  string domicile = 1;
+  string mode = 2;
+}
+
+message ReserveReply {
+  string admin_number = 1;
+  bool reservation_status = 2;
+}
+
+message ActivateRequest {
+  string admin_number = 1;
+}
+
+message ActivateReply {
+  string estimated_time = 1;
+  bool activation_status = 2;
+}
+
+message DeactivateRequest {
+  string admin_number = 1;
+}
+
+message DeactivateReply {
+  string estimated_time = 1;
+  bool deactivation_status = 2;
+}
+
+message TerminateRequest {
+  string admin_number = 1;
+}
+
+message TerminateReply {
+  string estimated_time = 1;
+  bool termination_status = 2;
+}
