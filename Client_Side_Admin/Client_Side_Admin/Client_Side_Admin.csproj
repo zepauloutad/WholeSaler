@@ -102,7 +102,7 @@
   </Target>
   <Import Project="..\..\Whole_Saler\packages\Grpc.Tools.2.54.0\build\Grpc.Tools.targets" Condition="Exists('..\..\Whole_Saler\packages\Grpc.Tools.2.54.0\build\Grpc.Tools.targets')" />
   <ItemGroup>
-    <Protobuf Include="C:\Users\zepau\source\repos\3_ano\2_semestre\Sistemas_Distribuidos\desafio_2\Server_Side\Server_Side\TelecomService.proto" GrpcServices="Client" />
+    <Protobuf Include="..\..\Server_Side\Server_Side\TelecomService.proto" GrpcServices="Client" />
   </ItemGroup>
   <Import Project="..\..\Whole_Saler\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\..\Whole_Saler\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
 </Project>
