@@ -53,7 +53,7 @@ namespace Client_Side_Admin
                 username = request.Username;
                 password = request.Password;
 
-                string authQuery = "SELECT * FROM dbo.Clientes WHERE nome = @nome AND senha = @senha";
+                string authQuery = "SELECT * FROM dbo.Admin WHERE nome = @nome AND senha = @senha";
 
                 SqlCommand command = new SqlCommand(authQuery, connection);
                 command.Parameters.AddWithValue("@nome", username);
