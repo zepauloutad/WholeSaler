@@ -11,6 +11,19 @@ service Telecom {
   rpc Terminate(TerminateRequest) returns (TerminateReply) {}
 }
 
+message UserCredentials {
+  string username = 1;
+  string password = 2;
+}
+
+service UserService {
+  rpc Authenticate(UserCredentials) returns (AuthenticateResponse) {}
+}
+
+message AuthenticateResponse {
+  string message = 1;
+}
+
 message ReserveRequest {
   string domicile = 1;
   string mode = 2;
