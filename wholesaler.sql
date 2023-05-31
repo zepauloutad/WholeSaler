@@ -1,0 +1,19 @@
+CREATE DATABASE wholesaler
+
+USE wholesaler
+
+CREATE TABLE Administrador(
+	id_administrador INTEGER PRIMARY KEY IDENTITY NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	senha VARCHAR(50) NOT NULL
+)
+CREATE TABLE Operador(
+	id_operador INTEGER PRIMARY KEY IDENTITY NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	senha VARCHAR(50) NOT NULL
+)
+CREATE TABLE Operador_Externo(
+	id_operador_externo INTEGER PRIMARY KEY IDENTITY NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	senha VARCHAR(50) NOT NULL
+)
