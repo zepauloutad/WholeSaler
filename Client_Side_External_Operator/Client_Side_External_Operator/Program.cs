@@ -6,8 +6,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using Grpc.Core;
-using Server_Side;
 
 namespace Client_Side_External_Operator
 {

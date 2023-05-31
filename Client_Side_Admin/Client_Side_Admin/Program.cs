@@ -18,6 +18,8 @@ namespace Client_Side_Admin
             string choice = "";
             string username = "";
             string password = "";
+            int type = 0;
+            string aux = "";
 
             // Autenticação do Cliente
 
@@ -29,31 +31,36 @@ namespace Client_Side_Admin
 
                 do
                 {
+                    Console.Write("Tipo de Utilizador:\n(0) Administrador\n(1) Operador\n(2) Operador Externo\n: ");
+                    username = Console.ReadLine();
+                    cBuffer();
+                } while (type == null && type != 0 && type != 1 && type != 2);
+                switch (type)
+                {
+                    case 0: aux = "Administrador"; break;
+                    case 1: aux = "Operador"; break;
+                    case 2: aux = "Operador_Externo"; break;
+                    default: break;
+                }
+                do
+                {
                     Console.Write("Nome de Utilizador: ");
                     username = Console.ReadLine();
                     cBuffer();
                 } while (username == null || username == "");
-                do {
+                do
+                {
                     Console.Write("Password: ");
                     password = Console.ReadLine();
                     cBuffer();
                 } while (password == null || password == "");
 
-                var request = new UserCredentials
-                {
-                    Username = username,
-                    Password = password
-                };
-
                 SqlConnection connection;
-                string connectionString = "Data Source=DESKTOP-BB50T6N\\SQLEXPRESS;Initial Catalog=wholesaler;Integrated Security=True";
+                string connectionString = "Data Source=DESKTOP-R5A13LN\\SQLEXPRESS;Initial Catalog=wholesaler;Integrated Security=True";
                 connection = new SqlConnection(connectionString);
                 connection.Open();
 
-                username = request.Username;
-                password = request.Password;
-
-                string authQuery = "SELECT * FROM dbo.Admin WHERE nome = @nome AND senha = @senha";
+                string authQuery = "SELECT * FROM dbo." + aux + " WHERE nome = @nome AND senha = @senha";
 
                 SqlCommand command = new SqlCommand(authQuery, connection);
                 command.Parameters.AddWithValue("@nome", username);
